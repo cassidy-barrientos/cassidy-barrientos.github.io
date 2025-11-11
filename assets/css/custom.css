@@ -1,0 +1,29 @@
+/* Make the banner a positioning context */
+#banner { position: relative; }
+
+/* Headshot bubble on the right */
+.banner-headshot {
+  position: absolute;
+  right: 5vw;
+  top: 6vw;
+  width: clamp(140px, 22vw, 320px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+.banner-headshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops nicely */
+}
+
+/* Smaller screens: shrink or move below the heading */
+@media (max-width: 800px) {
+  .banner-headshot {
+    position: static;      /* let it flow in the layout */
+    margin: 2rem auto 0;   /* center under the title */
+    display: block;
+  }
+}
